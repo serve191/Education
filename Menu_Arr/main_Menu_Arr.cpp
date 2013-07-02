@@ -6,18 +6,6 @@ void main ()
 	setlocale(LC_ALL,"ru");
 	srand(time(NULL));
 
-PrintMenu();
-InitMass(K,ROW,COL);
-Add_Remove_El(K,ROW,COL);
-Sort_el(K,ROW,COL);
-Plus(K,ROW,COL);
-
-}
-
-
-
-
-void PrintMenu(){
 k++;
 system("cls");
 	do
@@ -38,6 +26,11 @@ system("cls");
 			system("cls");
 }while(choice<1 || choice>5);
 
+if(vars>0 && choice !=1)
+{
+	Printing(K,ROW,COL);	
+}
+
 if(choice==1){
 	do
 	{
@@ -49,9 +42,10 @@ if(choice==1){
 			_getch();
 			system("cls");
 	}while(vars<1 || vars>2);
+	InitMass(K,ROW,COL);
 }
 
-if(choice==2 || choice==3){
+else if(choice==2 || choice==3){
 	do
 	{
 		cout<<" 1 - строку "<<endl;
@@ -60,18 +54,24 @@ if(choice==2 || choice==3){
 		if(vars<1 || vars>2)
 			cout<<"...";
 			_getch();
-			system("cls");
 	}while(vars<1 || vars>2);
+	Add_Remove_El(K,ROW,COL);
 }
 
-if(choice==4){
+else if(choice==4)
+	{
 	
 		cout<<" ¬ведите на какое число увеличить элементы массива : "<<endl;
 		cin>>vars;
-
+		Plus(K,ROW,COL);
 	}
-if(vars>0 && choice !=1)
-{
+else if(choice==5) Sort_el(K,ROW,COL);
+
+}
+
+
+
+void Printing(int K[][6],const int R, const int C){
 	for(int i=0;i<ROW;i++)
 	{
 		cout.width(5);
@@ -84,12 +84,8 @@ if(vars>0 && choice !=1)
 	cout<<"\n\n"<<endl;
 }
 
-}
-
-
 
 int InitMass(int K[][6],const int R, const int C){
-// 
 if(choice==1 && vars==1)
 {
 	int tmp;
@@ -125,15 +121,14 @@ else if(choice==1 && vars==2)
 			cout<<"\n"<<endl;
 		}
 }
-PrintMenu();
+main();
 return 0;
 }
 
 
-int Plus(int K[][6],const int R, const int C){
+void Plus(int K[][6],const int R, const int C){
 //польззватель вводит на какое число увеличить элементы массива
-	if(choice==4)
-{
+	if (vars==0)return;
 	for(int i=0;i<R;i++)
 	{
 		cout.width(5);
@@ -144,12 +139,14 @@ int Plus(int K[][6],const int R, const int C){
 		}
 		cout<<"\n"<<endl;
 	}
-}
-return 0;
+cout<<"...";
+_getch();
+main(); 
+return;
 }
 
 
-int Add_Remove_El(int C[][6],const int n, const int m){
+void Add_Remove_El(int C[][6],const int n, const int m){
 // вывести два массива
 //удаление
 	if(choice==2 && vars==1)
@@ -212,6 +209,7 @@ int Add_Remove_El(int C[][6],const int n, const int m){
 		}
 
 	}
+
 	else if(choice==3 && vars==2)
 	{
 		const int r=ROW,c=COL+1;
@@ -236,16 +234,15 @@ int Add_Remove_El(int C[][6],const int n, const int m){
 			cout<<"\n"<<endl;
 		}
 	}
-return 0;
+cout<<"...";
+_getch();
+main(); 
+return;
 }
 
 
-
-int Sort_el(int B[][6],const int size, const int m){
+void Sort_el(int B[][6],const int size, const int m){
 //сортировка
-	if(choice==5)
-	{
-
 	//это заполнение
 		for (int k = 0; k < size; k++)
 		//k - номер текущей строки
@@ -263,6 +260,7 @@ int Sort_el(int B[][6],const int size, const int m){
 			}
 			cout<<"\n"<<endl;
 		}
-	}
-	return 0;
+cout<<"...";
+_getch();
+main();
 }
