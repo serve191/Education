@@ -1,4 +1,5 @@
 #include "cubs.h"
+#include "rlutil.h"
 
 
 void gotoxy(short x, short y)
@@ -119,30 +120,29 @@ int ok;
 			cout<<"Кто первый бросает? (PC - 1, USER - 2) :";
 			cin>>ok;
 			Cubic();
-			_getch();
+			getch();
 		}
 		switch(ok)
 		{
 			case 1: 
 				My_C();	
-				_getch();
+				getch();
 				Cubic();
-				_getch();
+				getch();
 				My_Step();
-				_getch();
+				getch();
 				Cubic();
-				_getch(); break;
+				getch(); break;
 			case 2: 
 				My_Step();	
-				_getch();
+				getch();
 				Cubic();
-				_getch();
+				getch();
 				My_C();
-				_getch();
+				getch();
 				Cubic();
-				_getch(); break;
+				getch(); break;
 		}
-
 		Raund++;
 		if(Raund==6)
 		{
@@ -159,11 +159,11 @@ int ok;
 int My_C()
 {
 	int b,t;
-		temp=rand()%6+1;
-		t=temp;
-		temp=rand()%6+1;
-		b=temp;
-		sum1+=(t+b);
+	temp=rand()%6+1;
+	t=temp;
+	temp=rand()%6+1;
+	b=temp;
+	sum1+=(t+b);
 	gotoxy(5,20);
 	cout<<"Раунд "<<Raund<<" Очки Компьютера : "<<sum1<<"                   "<<endl;
 	cout<<"...\n";
@@ -182,7 +182,7 @@ int My_Step()
 	temp=rand()%6+1;
 	q=temp;
 	sum2+=(tmp+q);
-	gotoxy(5,20); 
+	gotoxy(5,22); 
 	cout<<"Раунд "<<Raund<<" Очки игрока : "<<sum2<<"                      "<<endl;
 	cout<<"...\n";
 	Memo();
@@ -191,10 +191,9 @@ int My_Step()
 	return 0;
 }
 
-
 void Cubic()
 {
-	while(!(_kbhit()))
+	while(!(kbhit()))
 	{
 		int ui = rand()%6+1;
 		Graph(ui);
@@ -205,7 +204,6 @@ void Cubic()
 		Memo();
 	}
 }
-
 
 int Graph(int g)
 {
