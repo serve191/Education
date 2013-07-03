@@ -94,7 +94,7 @@ int ok;
 		if(Raund==1)
 		{
 			gotoxy(5,20);
-			cout<<"Кто первый бросает? (PC - 1, USER - 2) :";
+			cout<<"Who first? (PC - 1, USER - 2) :";
 			cin>>ok;
 			Cubic();
 			getch();
@@ -124,9 +124,9 @@ int ok;
 		if(Raund==6)
 		{
 			gotoxy(5,30);
-			if(sum1>sum2) cout<<"Победил К О М П Ь Ю Т Е Р               \n"<<endl;
-			else if(sum1<sum2)cout<<"Победил ПОЛЬЗОВАТЕЛЬ                \n"<<endl;
-			else if(sum1==sum2)cout<<"Победила Н И Ч Ь Я                 \n"<<endl;
+			if(sum1>sum2) cout<<"COMPUTER WON               \n"<<endl;
+			else if(sum1<sum2)cout<<"user WON                \n"<<endl;
+			else if(sum1==sum2)cout<<"NOONE                 \n"<<endl;
 		}
 	}
 	gotoxy(5,40);
@@ -143,7 +143,7 @@ int My_C()
 	b=temp;
 	sum1+=(t+b);
 	gotoxy(5,20);
-	cout<<"Раунд "<<Raund<<" Очки Компьютера : "<<sum1<<"                   "<<endl;
+	cout<<"Раунд "<<Raund<<" Computer points : "<<sum1<<"                   "<<endl;
 	cout<<"...\n";
 	Memo();
 	Graph(t);
@@ -161,7 +161,7 @@ int My_Step()
 	q=temp;
 	sum2+=(tmp+q);
 	gotoxy(5,22); 
-	cout<<"Раунд "<<Raund<<" Очки игрока : "<<sum2<<"                      "<<endl;
+	cout<<"Раунд "<<Raund<<" User points : "<<sum2<<"                      "<<endl;
 	cout<<"...\n";
 	Memo();
 	Graph(tmp);
