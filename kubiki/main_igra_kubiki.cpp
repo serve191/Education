@@ -1,6 +1,6 @@
 #include "cubs.h"
 #include "rlutil.h"
-#ifdef WINDOWS
+#ifdef _WIN32
 #include <windows.h>
 #else
 #include <unistd.h>
