@@ -1,5 +1,11 @@
 #include "cubs.h"
 #include "rlutil.h"
+#ifdef WINDOWS
+#include <windows.h>
+#else
+#include <unistd.h>
+#define Sleep(x) usleep((x)*1000)
+#endif
 
 /*
 Игра «кубики». Условие: имеется два игральных кубика со значениями от 1 до 6. 
@@ -11,7 +17,7 @@
 Подсказка: печать кубиков выполняет функция. 
 */
 
-void main()
+int main()
 {
 	setlocale(LC_ALL,"ru");
 	srand(time(NULL));
@@ -124,6 +130,7 @@ int ok;
 		}
 	}
 	gotoxy(5,40);
+	return 0;
 }
 
 
