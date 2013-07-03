@@ -121,30 +121,28 @@ int ok;
 			Cubic();
 			_getch();
 		}
-		if(ok==1)
+		switch(ok)
 		{
-			My_C();	
-			_getch();
-			Cubic();
-			_getch();
-			My_Step();
-			_getch();
-			Cubic();
-			_getch();
+			case 1: 
+				My_C();	
+				_getch();
+				Cubic();
+				_getch();
+				My_Step();
+				_getch();
+				Cubic();
+				_getch(); break;
+			case 2: 
+				My_Step();	
+				_getch();
+				Cubic();
+				_getch();
+				My_C();
+				_getch();
+				Cubic();
+				_getch(); break;
 		}
-		else if(ok==2)
-		{
-			My_Step();	
-			_getch();
-			Cubic();
-			_getch();
-			My_C();
-			_getch();
-			Cubic();
-			_getch();
 
-
-		}
 		Raund++;
 		if(Raund==6)
 		{
