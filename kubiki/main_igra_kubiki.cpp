@@ -9,18 +9,6 @@ void gotoxy(short x, short y)
     SetConsoleCursorPosition(h, coord);
 }
 
-using namespace std;
-
-enum ConsoleColor {Black, Blue, Green, Cyan, Red, Magenta, Brown, LightGray, DarkGray, LightBlue, 
-LightGreen, LightCyan, LightRed, LightMagenta, Yellow, White };
-
-void SetColor(int text, int background=Black)
-{
-     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-     SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
-}
-
-
 /*
 Игра «кубики». Условие: имеется два игральных кубика со значениями от 1 до 6. 
 Игра происходит с компьютером, кубики бросаются поочередно. 
@@ -36,10 +24,8 @@ void main()
 	setlocale(LC_ALL,"ru");
 	srand(time(NULL));
 
-SetColor(Yellow);
 gotoxy(8,1);
 cout<<"___________________"<<endl;
-SetColor(White);
 gotoxy(7,2);
 cout<<"/                  / \\"<<endl;
 gotoxy(6,3);
@@ -53,9 +39,7 @@ cout<<"/                  /         \\"<<endl;
 gotoxy(2,7);
 cout<<"/                  /           \\"<<endl;        
 gotoxy(1,8);
-SetColor(Yellow);
 cout<<"/__________________/             \\"<<endl;      
-SetColor(White);
 gotoxy(1,9);
 cout<<"\\                  \\              /"<<endl;        
 gotoxy(2,10);
@@ -72,11 +56,8 @@ gotoxy(7,15);
 cout<<"\\                  \\  /"<<endl;
 gotoxy(8,16);
 cout<<"\\__________________\\/"<<endl;
-
-SetColor(Yellow);
 gotoxy(48,1);
 cout<<"___________________"<<endl;
-SetColor(White);
 gotoxy(47,2);
 cout<<"/                  / \\"<<endl;
 gotoxy(46,3);
@@ -90,9 +71,7 @@ cout<<"/                  /         \\"<<endl;
 gotoxy(42,7);
 cout<<"/                  /           \\"<<endl;        
 gotoxy(41,8);
-SetColor(Yellow);
 cout<<"/__________________/             \\"<<endl;      
-SetColor(White);
 gotoxy(41,9);
 cout<<"\\                  \\              /"<<endl;        
 gotoxy(42,10);
@@ -146,7 +125,7 @@ int ok;
 		Raund++;
 		if(Raund==6)
 		{
-			gotoxy(5,20);
+			gotoxy(5,30);
 			if(sum1>sum2) cout<<"Победил К О М П Ь Ю Т Е Р               \n"<<endl;
 			else if(sum1<sum2)cout<<"Победил ПОЛЬЗОВАТЕЛЬ                \n"<<endl;
 			else if(sum1==sum2)cout<<"Победила Н И Ч Ь Я                 \n"<<endl;
