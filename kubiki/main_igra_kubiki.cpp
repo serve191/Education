@@ -19,7 +19,7 @@
 
 int main()
 {
-	setlocale(LC_ALL,"ru");
+	setlocale(LC_ALL,"");
 	srand(time(NULL));
 
 gotoxy(8,1);
