@@ -34,14 +34,7 @@ void main()
 {
 	setlocale(LC_ALL,"ru");
 	srand(time(NULL));
-/*
-char a='*';
-while(!(_kbhit()))
-{
-	cout<<a;
-	Sleep(10);
-}
-*/
+
 SetColor(Yellow);
 gotoxy(8,1);
 cout<<"___________________"<<endl;
@@ -117,11 +110,6 @@ gotoxy(48,16);
 cout<<"\\__________________\\/"<<endl;
 
 
-
-
-
-
-
 int ok;
 	while(Raund<=5)
 	{
@@ -130,20 +118,34 @@ int ok;
 			gotoxy(5,20);
 			cout<<"Кто первый бросает? (PC - 1, USER - 2) :";
 			cin>>ok;
+			Cubic();
+			_getch();
 		}
-
 		if(ok==1)
 		{
-			My_C();
+			My_C();	
+			_getch();
+			Cubic();
+			_getch();
 			My_Step();
+			_getch();
+			Cubic();
+			_getch();
 		}
 		else if(ok==2)
 		{
-			My_Step();
+			My_Step();	
+			_getch();
+			Cubic();
+			_getch();
 			My_C();
+			_getch();
+			Cubic();
+			_getch();
+
+
 		}
 		Raund++;
-//		system("cls");
 		if(Raund==6)
 		{
 			gotoxy(5,20);
@@ -151,9 +153,7 @@ int ok;
 			else if(sum1<sum2)cout<<"Победил ПОЛЬЗОВАТЕЛЬ                \n"<<endl;
 			else if(sum1==sum2)cout<<"Победила Н И Ч Ь Я                 \n"<<endl;
 		}
-
 	}
-
 	gotoxy(5,40);
 }
 
@@ -166,35 +166,31 @@ int My_C()
 		temp=rand()%6+1;
 		b=temp;
 		sum1+=(t+b);
-		Graph(t);
-		Graph1(b);
 	gotoxy(5,20);
 	cout<<"Раунд "<<Raund<<" Очки Компьютера : "<<sum1<<"                   "<<endl;
 	cout<<"...\n";
-	Cubic();
-	_getch();
+	Memo();
+	Graph(t);
+	Graph1(b);
 
-	return sum1;
+	return 0;
 }
 
 int My_Step()
 {
 	int q,tmp;
-		temp=rand()%6+1;
-		tmp=temp;
-		temp=rand()%6+1;
-		q=temp;
-		sum2+=(tmp+q);
-		Graph(tmp);
-		Graph1(q);
-
+	temp=rand()%6+1;
+	tmp=temp;
+	temp=rand()%6+1;
+	q=temp;
+	sum2+=(tmp+q);
 	gotoxy(5,20); 
 	cout<<"Раунд "<<Raund<<" Очки игрока : "<<sum2<<"                      "<<endl;
 	cout<<"...\n";
-//	Cubic();
-
-	_getch();
-	return sum2;
+	Memo();
+	Graph(tmp);
+	Graph1(q);
+	return 0;
 }
 
 
@@ -202,380 +198,13 @@ void Cubic()
 {
 	while(!(_kbhit()))
 	{
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
+		int ui = rand()%6+1;
+		Graph(ui);
 		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
-
-
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
+		ui = rand()%6+1;
+		Graph1(ui);
 		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
-
-
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
-
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
-
-
-		gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(56,6);
-		cout<<"_"<<endl;
-		gotoxy(55,7);
-		cout<<"/_/"<<endl;
-		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
-
-
-		gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
-
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(56,6);
-		cout<<"_"<<endl;
-		gotoxy(55,7);
-		cout<<"/_/"<<endl;
-		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
-		
-		gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(14,2);
-		cout<<"_"<<endl;
-		gotoxy(13,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(11,6);
-		cout<<"_"<<endl;
-		gotoxy(10,7);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-//		!(_kbhit());
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(54,2);
-		cout<<"_"<<endl;
-		gotoxy(53,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(51,6);
-		cout<<"_"<<endl;
-		gotoxy(50,7);
-		cout<<"/_/"<<endl;
-
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-
-		gotoxy(57,6);
-		cout<<"_"<<endl;
-		gotoxy(56,7);
-		cout<<"/_/"<<endl;
-		Sleep(100);
-
-		gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
+		Memo();
 	}
 }
 
@@ -585,284 +214,246 @@ int Graph(int g)
 	switch(g)
 	{
 		case 1:
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-		break;
+			gotoxy(13,4);
+			cout<<"_"<<endl;
+			gotoxy(12,5);
+			cout<<"/_/"<<endl;break;
 		case 2:
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
+			gotoxy(20,2);
+			cout<<"_"<<endl;
+			gotoxy(19,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-		break;
+			gotoxy(6,6);
+			cout<<"_"<<endl;
+			gotoxy(5,7);
+			cout<<"/_/"<<endl; break;
 		case 3:
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
+			gotoxy(20,2);
+			cout<<"_"<<endl;
+			gotoxy(19,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
+			gotoxy(13,4);
+			cout<<"_"<<endl;
+			gotoxy(12,5);
+			cout<<"/_/"<<endl;
 
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-		break;
+			gotoxy(6,6);
+			cout<<"_"<<endl;
+			gotoxy(5,7);
+			cout<<"/_/"<<endl; break;
 		case 4:
-		gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
+			gotoxy(9,2);
+			cout<<"_"<<endl;
+			gotoxy(8,3);
+			cout<<"/_/"<<endl;
+			gotoxy(20,2);
+			cout<<"_"<<endl;
+			gotoxy(19,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-		break;
+			gotoxy(6,6);
+			cout<<"_"<<endl;
+			gotoxy(5,7);
+			cout<<"/_/"<<endl;
+			gotoxy(16,6);
+			cout<<"_"<<endl;
+			gotoxy(15,7);
+			cout<<"/_/"<<endl; break;
 		case 5:
-		gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
+			gotoxy(9,2);
+			cout<<"_"<<endl;
+			gotoxy(8,3);
+			cout<<"/_/"<<endl;
+			gotoxy(20,2);
+			cout<<"_"<<endl;
+			gotoxy(19,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(13,4);
-		cout<<"_"<<endl;
-		gotoxy(12,5);
-		cout<<"/_/"<<endl;
+			gotoxy(13,4);
+			cout<<"_"<<endl;
+			gotoxy(12,5);
+			cout<<"/_/"<<endl;
 
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-		break;
+			gotoxy(6,6);
+			cout<<"_"<<endl;
+			gotoxy(5,7);
+			cout<<"/_/"<<endl;
+			gotoxy(16,6);
+			cout<<"_"<<endl;
+			gotoxy(15,7);
+			cout<<"/_/"<<endl; break;
 		case 6:
 			gotoxy(9,2);
-		cout<<"_"<<endl;
-		gotoxy(8,3);
-		cout<<"/_/"<<endl;
-		gotoxy(20,2);
-		cout<<"_"<<endl;
-		gotoxy(19,3);
-		cout<<"/_/"<<endl;
+			cout<<"_"<<endl;
+			gotoxy(8,3);
+			cout<<"/_/"<<endl;
+			gotoxy(20,2);
+			cout<<"_"<<endl;
+			gotoxy(19,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(14,2);
-		cout<<"_"<<endl;
-		gotoxy(13,3);
-		cout<<"/_/"<<endl;
+			gotoxy(14,2);
+			cout<<"_"<<endl;
+			gotoxy(13,3);
+			cout<<"/_/"<<endl;
+			
+			gotoxy(11,6);
+			cout<<"_"<<endl;
+			gotoxy(10,7);
+			cout<<"/_/"<<endl;
 
-
-		gotoxy(11,6);
-		cout<<"_"<<endl;
-		gotoxy(10,7);
-		cout<<"/_/"<<endl;
-
-		gotoxy(6,6);
-		cout<<"_"<<endl;
-		gotoxy(5,7);
-		cout<<"/_/"<<endl;
-		gotoxy(16,6);
-		cout<<"_"<<endl;
-		gotoxy(15,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-//		Sleep(500);
-//		_getch();
-		break;
+			gotoxy(6,6);
+			cout<<"_"<<endl;
+			gotoxy(5,7);
+			cout<<"/_/"<<endl;
+			gotoxy(16,6);
+			cout<<"_"<<endl;
+			gotoxy(15,7);
+			cout<<"/_/"<<endl; break;
 	}
-//_getch();
-//!(_kbhit());
-//Sleep(1000);
-	return 0;
-	
+	return 0;	
 }
 
 int Graph1(int g)
 {
-	if(g==1)
+	switch(g)
 	{
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-	}
-	else if(g==2)
-	{
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
+		case 1: 
+			gotoxy(53,4);
+			cout<<"_"<<endl;
+			gotoxy(52,5);
+			cout<<"/_/"<<endl; break;
+		case 2: 
+			gotoxy(60,2);
+			cout<<"_"<<endl;
+			gotoxy(59,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-	}
-	else if(g==3)
-	{
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl; break;
+		case 3: 
+			gotoxy(60,2);
+			cout<<"_"<<endl;
+			gotoxy(59,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
+			gotoxy(53,4);
+			cout<<"_"<<endl;
+			gotoxy(52,5);
+			cout<<"/_/"<<endl;
 
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-	}
-	else if(g==4)
-	{
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl; break;
+		case 4: 
+			gotoxy(49,2);
+			cout<<"_"<<endl;
+			gotoxy(48,3);
+			cout<<"/_/"<<endl;
+			gotoxy(60,2);
+			cout<<"_"<<endl;
+			gotoxy(59,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(56,6);
-		cout<<"_"<<endl;
-		gotoxy(55,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());	
-	}
-	else if(g==5)
-	{
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl;
+			gotoxy(56,6);
+			cout<<"_"<<endl;
+			gotoxy(55,7);
+			cout<<"/_/"<<endl;break;
+		case 5: 
+			gotoxy(49,2);
+			cout<<"_"<<endl;
+			gotoxy(48,3);
+			cout<<"/_/"<<endl;
+			gotoxy(60,2);
+			cout<<"_"<<endl;
+			gotoxy(59,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(53,4);
-		cout<<"_"<<endl;
-		gotoxy(52,5);
-		cout<<"/_/"<<endl;
+			gotoxy(53,4);
+			cout<<"_"<<endl;
+			gotoxy(52,5);
+			cout<<"/_/"<<endl;
+				
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl;
+			gotoxy(56,6);
+			cout<<"_"<<endl;
+			gotoxy(55,7);
+			cout<<"/_/"<<endl;break;
+		case 6: 
+			gotoxy(49,2);
+			cout<<"_"<<endl;
+			gotoxy(48,3);
+			cout<<"/_/"<<endl;
+			gotoxy(60,2);
+			cout<<"_"<<endl;
+			gotoxy(59,3);
+			cout<<"/_/"<<endl;
 
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(56,6);
-		cout<<"_"<<endl;
-		gotoxy(55,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-	}
-	else if(g==6)
-	{
-		gotoxy(49,2);
-		cout<<"_"<<endl;
-		gotoxy(48,3);
-		cout<<"/_/"<<endl;
-		gotoxy(60,2);
-		cout<<"_"<<endl;
-		gotoxy(59,3);
-		cout<<"/_/"<<endl;
-
-		gotoxy(54,2);
-		cout<<"_"<<endl;
-		gotoxy(53,3);
-		cout<<"/_/"<<endl;
+			gotoxy(54,2);
+			cout<<"_"<<endl;
+			gotoxy(53,3);
+			cout<<"/_/"<<endl;
 
 
-		gotoxy(51,6);
-		cout<<"_"<<endl;
-		gotoxy(50,7);
-		cout<<"/_/"<<endl;
+			gotoxy(51,6);
+			cout<<"_"<<endl;
+			gotoxy(50,7);
+			cout<<"/_/"<<endl;
 
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-		gotoxy(46,6);
-		cout<<"_"<<endl;
-		gotoxy(45,7);
-		cout<<"/_/"<<endl;
-
-		gotoxy(57,6);
-		cout<<"_"<<endl;
-		gotoxy(56,7);
-		cout<<"/_/"<<endl;
-		!(_kbhit());
-//		Sleep(500);
-//		_getch();
-	}
-//
-//_getch();
-//!(_kbhit());
-Sleep(1000);
-
-gotoxy(8,2);
-cout<<"                  "<<endl;
-gotoxy(7,3);
-cout<<"                  "<<endl;
-gotoxy(6,4);
-cout<<"                  "<<endl;
-gotoxy(5,5);
-cout<<"                  "<<endl;
-gotoxy(4,6);
-cout<<"                  "<<endl;
-gotoxy(3,7);
-cout<<"                  "<<endl;
-
-gotoxy(48,2);
-cout<<"                  "<<endl;
-gotoxy(47,3);
-cout<<"                  "<<endl;
-gotoxy(46,4);
-cout<<"                  "<<endl;
-gotoxy(45,5);
-cout<<"                  "<<endl;
-gotoxy(44,6);
-cout<<"                  "<<endl;
-gotoxy(43,7);
-cout<<"                  "<<endl;
-
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl;
+			gotoxy(46,6);
+			cout<<"_"<<endl;
+			gotoxy(45,7);
+			cout<<"/_/"<<endl;
+				
+			gotoxy(57,6);
+			cout<<"_"<<endl;
+			gotoxy(56,7);
+			cout<<"/_/"<<endl;break;
+	}	
 	return 0;	
+}
+
+void Memo()
+{
+	gotoxy(8,2);
+	cout<<"                  "<<endl;
+	gotoxy(7,3);
+	cout<<"                  "<<endl;
+	gotoxy(6,4);
+	cout<<"                  "<<endl;
+	gotoxy(5,5);
+	cout<<"                  "<<endl;
+	gotoxy(4,6);
+	cout<<"                  "<<endl;
+	gotoxy(3,7);
+	cout<<"                  "<<endl;
+	
+	gotoxy(48,2);
+	cout<<"                  "<<endl;
+	gotoxy(47,3);
+	cout<<"                  "<<endl;
+	gotoxy(46,4);
+	cout<<"                  "<<endl;
+	gotoxy(45,5);
+	cout<<"                  "<<endl;
+	gotoxy(44,6);
+	cout<<"                  "<<endl;
+	gotoxy(43,7);
+	cout<<"                  "<<endl;
 }
