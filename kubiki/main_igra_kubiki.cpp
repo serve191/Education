@@ -1,14 +1,6 @@
 #include "cubs.h"
 #include "rlutil.h"
 
-
-void gotoxy(short x, short y)
-{
-    COORD coord = {x, y};
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(h, coord);
-}
-
 /*
 Игра «кубики». Условие: имеется два игральных кубика со значениями от 1 до 6. 
 Игра происходит с компьютером, кубики бросаются поочередно. 
