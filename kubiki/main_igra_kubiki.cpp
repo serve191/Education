@@ -143,7 +143,7 @@ int My_C()
 	b=temp;
 	sum1+=(t+b);
 	gotoxy(5,20);
-	cout<<"Раунд "<<Raund<<" Computer points : "<<sum1<<"                   "<<endl;
+	cout<<"Round "<<Raund<<" Computer points : "<<sum1<<"                   "<<endl;
 	cout<<"...\n";
 	Memo();
 	Graph(t);
@@ -161,7 +161,7 @@ int My_Step()
 	q=temp;
 	sum2+=(tmp+q);
 	gotoxy(5,22); 
-	cout<<"Раунд "<<Raund<<" User points : "<<sum2<<"                      "<<endl;
+	cout<<"Round "<<Raund<<" User points : "<<sum2<<"                      "<<endl;
 	cout<<"...\n";
 	Memo();
 	Graph(tmp);
